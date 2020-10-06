@@ -1,25 +1,38 @@
 <template>
   <div id="app">
-    <Calculator />
-    <Framework />
+    <!-- <Calculator /> -->
+    <!-- <Framework /> -->
+    <Users />
   </div>
 </template>
 
 <script>
-import Framework from "./components/Framework.vue";
-import Calculator from "./components/Calculator.vue";
+// import Framework from "./components/Framework.vue";
+// import Calculator from "./components/Calculator.vue";
+import Users from "./components/Users.vue";
 
 export default {
   name: "App",
-  data() {},
+  data() {
+    return{}
+  },
   components: {
-    Framework,
-    Calculator,
+    // Framework,
+    // Calculator,
+    Users
   },
 };
 </script>
 
 <style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 .row {
   margin: 50px;
   display: -webkit-box;
