@@ -7,19 +7,12 @@
       <span>=</span>
       <span>{{ num1 + num2 }}</span>
     </div>
-    <div class="row second">
-      <select v-model="name">
-        <option v-bind:key="framework" v-for="framework in frameworks">
-          {{ framework }}
-        </option>
-      </select>
-      <p>My favorite kind of taco is {{ name }}</p>
-    </div>
+    <Framework />
   </div>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
+import Framework from "./components/Framework.vue";
 
 export default {
   name: "App",
@@ -31,9 +24,9 @@ export default {
       frameworks: ["Angular", "React", "Vue"],
     };
   },
-  // components: {
-  //   HelloWorld
-  // }
+  components: {
+    Framework,
+  },
 };
 </script>
 
