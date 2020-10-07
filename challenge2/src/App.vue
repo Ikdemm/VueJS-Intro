@@ -5,7 +5,7 @@
 
       <div class="new">
         <h3>Add a New Post</h3>
-        <form>
+        <form v-on:submit.prevent="createPost">
           <input v-model="newTitle" placeholder="title" required />
           <input v-model="newAuthor" placeholder="author name" required />
           <select v-model="newLabel" required>
@@ -27,7 +27,7 @@
         <option>history</option>
       </select>
 
-      <div v-for="post in posts" :key="post.title" class="post">
+      <div v-for="post in filteredByLabel" :key="post.title" class="post">
         <span class="label">{{ post.label }}</span>
         <p>{{ post.title }}</p>
         <small>{{ post.author }}</small>
@@ -97,6 +97,25 @@ const App = {
       newAuthor: "",
       newLabel: "",
     };
+  },
+  methods: {
+    createPost: function () {
+      let newPost = new Object({
+        title: this.newTitle,
+        author: this.newAuthor,
+        label: this.newLabel,
+      });
+      this.posts.push(newPost);
+      this.newTitle = "";
+      this.newAuthor = "";
+      this.newLabel = "";
+    },
+  },
+  computed: {
+    filteredByLabel() {
+      let filter = new RegExp(this.selected, "i");
+      return this.posts.filter((el) => el.label.match(filter));
+    },
   },
 };
 
