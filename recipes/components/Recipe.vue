@@ -1,12 +1,34 @@
+<!-- eslint-disable -->
 <template>
   <article class="recipe">
     <div
       class="thumbnail"
-      style="
-        background-image: url('https://andyshelter.com/wp-content/uploads/2015/07/1-cheesecake-1183.jpg');
-      "
+      :style="{ backgroundImage: 'url(' + thumbnail + ')' }"
     ></div>
-    <h1>Cheesecake</h1>
-    <p>Some nice preview text</p>
+    <h1>{{ title }}</h1>
+    <p>{{ previewText }}</p>
   </article>
 </template>
+
+<script>
+export default {
+  props: ['thumbnail', 'title', 'previewText'],
+}
+</script>
+
+<style scoped>
+.recipe {
+  box-sizing: border-box;
+  width: 280px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px #aaa;
+}
+
+.thumbnail {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+</style>
