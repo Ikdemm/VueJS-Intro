@@ -6,7 +6,7 @@
       <div v-if="cart"></div>
       <div v-else>
         <p>
-          Your cart is empty, why not
+          Your cart is empty, try to
           <nuxt-link exact to="/" class="logo"
             >fill it up with something?</nuxt-link
           >
