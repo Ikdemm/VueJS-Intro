@@ -4,9 +4,10 @@
     <p>
       Here you can find the best and easiest Recipeez to make during Quarantine
     </p>
-    <button class="jump-button">
-      <nuxt-link to="/recipes" class="jump-link">Jump right in!</nuxt-link>
-    </button>
+
+    <nuxt-link to="/recipes" class="jump-link"
+      ><button class="jump-button">Jump right in!</button>
+    </nuxt-link>
   </div>
 </template>
 
