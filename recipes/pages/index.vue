@@ -1,63 +1,48 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">recipes</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <h1>Welcome to Recipeez!</h1>
+    <p>
+      Here you can find the best and easiest Recipeez to make during Quarantine
+    </p>
+    <button class="jump-button">
+      <nuxt-link to="/recipes" class="jump-link">Jump right in!</nuxt-link>
+    </button>
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header'
+
 export default {}
 </script>
 
-<style>
+<style scoped>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10px;
+}
+
+* {
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.jump-button {
+  background-color: peru;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.jump-button:hover {
+  background-color: rgb(179, 139, 30);
+  cursor: pointer;
 }
 
-.links {
-  padding-top: 15px;
+.jump-link {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 </style>
